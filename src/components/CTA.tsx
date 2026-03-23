@@ -7,8 +7,7 @@ export default function CTA() {
       </div>
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <h2 className="text-5xl font-bold font-poppins mb-4">Ready to run a smarter, faster, AI-powered ops team?</h2>
-        <p className="text-lg text-slate-300 mb-10">Join the waitlist and be among the first to experience AI-powered incident resolution.</p>
-        <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+<form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
           <input
             type="email"
             placeholder="Enter your email"
