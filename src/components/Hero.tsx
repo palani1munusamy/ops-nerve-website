@@ -15,14 +15,11 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
           AI-powered anomaly detection and root cause intelligence platform for DevOps/SRE teams. Detect issues in minutes. Identify root cause instantly. Act with confidence.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="group relative px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all">
+        <div className="flex justify-center">
+          <a href="/contact" className="group relative px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all">
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 group-hover:shadow-2xl group-hover:shadow-indigo-500/50 transition-all"></div>
             <span className="relative text-white flex items-center justify-center">Request Demo</span>
-          </button>
-          <button className="px-8 py-4 rounded-lg font-semibold border border-indigo-400/50 text-indigo-300 hover:bg-indigo-500/10 hover:border-indigo-400 transition-all backdrop-blur-sm">
-            Watch Demo
-          </button>
+          </a>
         </div>
       </div>
     </section>
