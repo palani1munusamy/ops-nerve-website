@@ -64,25 +64,25 @@ export default function Features() {
   return (
     <section id="features" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-6 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
           {features.map((feature, index) => {
             const color = colors[index % colors.length];
             return (
               <div
                 key={index}
-                className={`group p-8 rounded-xl backdrop-blur-xl border transition-all hover:border-opacity-100 hover:shadow-2xl duration-300 bg-gradient-to-br ${color.grad} cursor-pointer`}
+                className={`group p-4 rounded-xl backdrop-blur-xl border transition-all hover:border-opacity-100 hover:shadow-2xl duration-300 bg-gradient-to-br ${color.grad} cursor-pointer`}
                 style={{
                   background: `linear-gradient(135deg, ${color.bg}, transparent)`,
                   borderColor: color.border,
                 }}
               >
                 <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg backdrop-blur-sm"
+                  className="w-10 h-10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform shadow-lg backdrop-blur-sm"
                   style={{ background: `${color.icon}20`, boxShadow: `0 0 20px ${color.icon}40` }}
                 >
-                  <feature.icon size={28} style={{ color: color.icon }} />
+                  <feature.icon size={20} style={{ color: color.icon }} />
                 </div>
-                <h3 className="text-lg font-semibold font-poppins mb-3" style={{ color: color.title }}>
+                <h3 className="text-sm font-semibold font-poppins mb-2" style={{ color: color.title }}>
                   {feature.title}
                 </h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{feature.description}</p>
