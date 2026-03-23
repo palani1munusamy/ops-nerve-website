@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=800">
+<title>OpsNerve — Solution Overview</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',-apple-system,sans-serif;background:#0d0f15;color:#e2e8f0;display:flex;justify-content:center;padding:24px}
+  .container{width:725px;background:linear-gradient(145deg,#12141c,#0d0f15,#10131e);border:1px solid rgba(99,102,241,.12);border-radius:16px;padding:28px 32px 24px;box-shadow:0 0 60px rgba(99,102,241,.05)}
+  .hdr{text-align:center;margin-bottom:18px}
+  .hdr h1{font-size:26px;font-weight:800;background:linear-gradient(135deg,#818cf8,#a78bfa,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+  .hdr .sub{font-size:13px;color:#94a3b8;margin-top:3px}
+  .legend{display:flex;justify-content:center;gap:22px;margin-bottom:18px;flex-wrap:wrap}
+  .leg{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:500;color:#94a3b8}
+  .leg-line{width:26px;height:2px;border-radius:1px}
+  .leg-line.solid{background:#64748b}
+  .leg-line.dash{background:repeating-linear-gradient(90deg,#64748b 0,#64748b 4px,transparent 4px,transparent 7px)}
+  .leg-dot{width:9px;height:9px;border-radius:2px}
+  .arch{display:flex;gap:12px;align-items:stretch}
+  .sec{border:1px solid rgba(100,116,139,.08);border-radius:12px;padding:12px;background:rgba(14,16,24,.5);height:100%}
+  .sec-hdr{display:flex;align-items:center;gap:5px;margin-bottom:8px}
+  .sec-hdr .dot{width:6px;height:6px;border-radius:50%}
+  .sec-hdr .lbl{font-size:10px;font-weight:700;letter-spacing:.4px}
+  .col-src{width:145px;flex-shrink:0;display:flex;flex-direction:column}
+  .col-core{flex:1;max-width:320px;display:flex;flex-direction:column}
+  .col-out{width:210px;flex-shrink:0}
+  .col-arr{display:flex;align-items:center;justify-content:center;width:18px;flex-shrink:0;color:#334155;font-size:18px;opacity:.5}
+  /* Sources */
+  .src-cat{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.16);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+  .src-cat-title{font-size:15px;font-weight:700;color:#93c5fd;margin-bottom:6px}
+  .src-sub{background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.1);border-radius:5px;padding:4px 10px;margin-bottom:4px;font-size:11px;color:#7db8f0}
+  .src-sub.other{opacity:.55;border-style:dashed;color:#5580b0}
+  /* Ingestion */
+  .ingest-card{border-radius:10px;padding:12px 14px;margin-bottom:8px;background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(56,189,248,.03));border:1px solid rgba(56,189,248,.2);position:relative;overflow:hidden}
+  .ingest-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#0ea5e9,#38bdf8)}
+  .ingest-card .ict{font-size:13px;font-weight:700;color:#bae6fd;margin-bottom:4px}
+  .ingest-card .icd{font-size:10px;color:#7dd3fc;line-height:1.6;opacity:.85}
+  .ingest-badge{display:inline-block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:2px 6px;border-radius:3px;margin-top:5px;background:rgba(14,165,233,.15);color:#38bdf8}
+  /* Core */
+  .core-card{border-radius:12px;padding:14px 16px;position:relative;overflow:hidden;margin-bottom:10px}
+  .core-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+  .core-card .ct{font-size:17px;font-weight:700;margin-bottom:4px}
+  .core-card .cd{font-size:11px;font-weight:400;line-height:1.5;opacity:.7}
+  .badge{display:inline-block;font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 6px;border-radius:3px;margin-top:6px}
+  .gc{background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(129,140,248,.04));border:1px solid rgba(99,102,241,.22);color:#a5b4fc}
+  .gc::before{background:linear-gradient(90deg,#6366f1,#818cf8)}.gc .ct{color:#c7d2fe}.gc .badge{background:rgba(99,102,241,.15);color:#818cf8}
+  .mc{background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(8,145,178,.04));border:1px solid rgba(6,182,212,.22);color:#a5f3fc}
+  .mc::before{background:linear-gradient(90deg,#0891b2,#06b6d4)}.mc .ct{color:#cffafe}.mc .badge{background:rgba(6,182,212,.12);color:#06b6d4}
+  .sm{background:linear-gradient(135deg,rgba(251,146,60,.1),rgba(249,115,22,.04));border:1px solid rgba(251,146,60,.22);color:#fdba74}
+  .sm::before{background:linear-gradient(90deg,#f97316,#fb923c)}.sm .ct{color:#fed7aa}.sm .badge{background:rgba(251,146,60,.15);color:#fb923c}
+  .rca{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(147,51,234,.04));border:1px solid rgba(168,85,247,.22);color:#c4b5fd}
+  .rca::before{background:linear-gradient(90deg,#9333ea,#a855f7)}.rca .ct{color:#ddd6fe}.rca .badge{background:rgba(168,85,247,.15);color:#a855f7}
+  .nh{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(16,185,129,.04));border:1px solid rgba(34,197,94,.22);color:#86efac}
+  .nh::before{background:linear-gradient(90deg,#10b981,#22c55e)}.nh .ct{color:#bbf7d0}.nh .badge{background:rgba(34,197,94,.15);color:#22c55e}
+  .tg{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+  .tg-lbl{font-size:8.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+  .tg-item{font-size:9.5px;font-weight:600;padding:2px 6px;border-radius:3px}
+  .tg-ent{background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.18)}
+  .tg-rel{background:rgba(168,85,247,.08);color:#a78bfa;border:1px solid rgba(168,85,247,.12);font-style:italic}
+  .flow-lbl{text-align:center;font-size:10px;color:#475569;margin:5px 0}
+  .inputs{font-size:9px;color:rgba(196,181,253,.55);line-height:1.6;margin-top:5px}
+  /* Output */
+  .out-cat{background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.14);border-radius:8px;padding:10px 12px;margin-bottom:8px}
+  .out-cat-title{font-size:11px;font-weight:700;color:#86efac;margin-bottom:6px}
+  .out-sub{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.1);border-radius:5px;padding:4px 10px;margin-bottom:4px;font-size:11px;color:#6ee7b7}
+  .out-sub.other{opacity:.55;border-style:dashed;color:#4abe80}
+  /* Stores */
+  .stores-band{margin-top:12px;border:1px solid rgba(100,116,139,.14);border-radius:12px;padding:12px 16px;background:rgba(14,16,24,.4)}
+  .stores-band-hdr{display:flex;align-items:center;gap:5px;margin-bottom:10px}
+  .stores-band-hdr .dot{width:6px;height:6px;border-radius:50%;background:#475569}
+  .stores-band-hdr .lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#475569}
+  .stores-row{display:flex;gap:10px}
+  .store-card{flex:1;background:rgba(100,116,139,.05);border:1px solid rgba(100,116,139,.16);border-radius:8px;padding:10px 12px;position:relative;overflow:hidden}
+  .store-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+  .store-card.neo4j::before{background:linear-gradient(90deg,#6366f1,#818cf8)}
+  .store-card.tsdb::before{background:linear-gradient(90deg,#0891b2,#06b6d4)}
+  .store-card.hist::before{background:linear-gradient(90deg,#a855f7,#9333ea)}
+  .store-card .st{font-size:11px;font-weight:700;color:#94a3b8;margin-bottom:6px;white-space:nowrap}
+  .store-card .sd{font-size:10px;color:#64748b;line-height:1.7}
+  .store-flow{display:flex;flex-direction:column;gap:4px;margin-top:6px}
+  .store-flow-tag{font-size:9px;font-weight:600;padding:2px 7px;border-radius:3px;display:flex;align-items:center;gap:3px;white-space:nowrap}
+  .store-flow-tag.writes{background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.18)}
+  .store-flow-tag.reads{background:rgba(100,116,139,.08);color:#94a3b8;border:1px solid rgba(100,116,139,.16)}
+  .store-link{display:flex;gap:6px;margin-top:8px;padding-top:7px;border-top:1px dashed rgba(100,116,139,.15);flex-wrap:wrap}
+  .store-link-tag{font-size:8.5px;font-weight:600;padding:2px 6px;border-radius:3px;display:flex;align-items:center;gap:3px;opacity:.7}
+  .store-link-tag.w{background:rgba(99,102,241,.08);color:#818cf8;border:1px dashed rgba(99,102,241,.2)}
+  .store-link-tag.r{background:rgba(100,116,139,.06);color:#64748b;border:1px dashed rgba(100,116,139,.18)}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hdr">
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:6px">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="52" height="52">
+        <defs>
+          <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+            <stop offset="0%" stop-color="#1e1f35"/><stop offset="100%" stop-color="#0d0f15"/>
+          </radialGradient>
+          <radialGradient id="core" cx="40%" cy="35%" r="65%">
+            <stop offset="0%" stop-color="#a78bfa"/><stop offset="100%" stop-color="#6366f1"/>
+          </radialGradient>
+          <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#818cf8"/><stop offset="100%" stop-color="#a855f7"/>
+          </linearGradient>
+          <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <filter id="softglow" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur stdDeviation="3.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="url(#bg)"/>
+        <circle cx="50" cy="50" r="47" fill="none" stroke="url(#ring)" stroke-width="1.2" opacity="0.5"/>
+        <line x1="50" y1="50" x2="50" y2="20" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="50" cy="20" r="3.5" fill="#818cf8" opacity="0.85" filter="url(#glow)"/>
+        <line x1="50" y1="50" x2="73" y2="30" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="73" cy="30" r="3" fill="#a78bfa" opacity="0.8" filter="url(#glow)"/>
+        <line x1="50" y1="50" x2="76" y2="65" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="76" cy="65" r="2.5" fill="#818cf8" opacity="0.7" filter="url(#glow)"/>
+        <line x1="50" y1="50" x2="50" y2="80" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="50" cy="80" r="3" fill="#a855f7" opacity="0.75" filter="url(#glow)"/>
+        <line x1="50" y1="50" x2="24" y2="65" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="24" cy="65" r="2.5" fill="#818cf8" opacity="0.7" filter="url(#glow)"/>
+        <line x1="50" y1="50" x2="27" y2="30" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+        <circle cx="27" cy="30" r="3" fill="#a78bfa" opacity="0.8" filter="url(#glow)"/>
+        <line x1="50" y1="20" x2="73" y2="30" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <line x1="73" y1="30" x2="76" y2="65" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <line x1="76" y1="65" x2="50" y2="80" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <line x1="50" y1="80" x2="24" y2="65" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <line x1="24" y1="65" x2="27" y2="30" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <line x1="27" y1="30" x2="50" y2="20" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+        <circle cx="50" cy="50" r="14" fill="none" stroke="#6366f1" stroke-width="0.8" opacity="0.35"/>
+        <circle cx="50" cy="50" r="10" fill="url(#core)" filter="url(#softglow)"/>
+        <circle cx="47" cy="47" r="3.5" fill="white" opacity="0.15"/>
+      </svg>
+      <h1>OpsNerve Solution Overview</h1>
+    </div>
+    <div class="sub">AI Powered Tool-Agnostic Ops — Monitoring, Triaging, and Root Cause Intelligence</div>
+    <div style="margin-top:10px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:#818cf8">Detect issues in minutes &nbsp;·&nbsp; Identify root cause instantly &nbsp;·&nbsp; Act with confidence</div>
+  </div>
+
+
+  <div class="arch">
+    <!-- COL 1: DATA SOURCES -->
+    <div class="col-src"><div class="sec">
+      <div class="sec-hdr"><div class="dot" style="background:#3b82f6"></div><div class="lbl" style="color:#3b82f6">Data Sources</div></div>
+      <div class="src-cat">
+        <div class="src-cat-title">Signal Types</div>
+        <div class="src-sub">Logs</div>
+        <div class="src-sub">Infrastructure</div>
+        <div class="src-sub">Deployments</div>
+        <div class="src-sub">Incidents</div>
+        <div class="src-sub">Runbooks</div>
+      </div>
+      <div class="src-cat">
+        <div class="src-cat-title">Supported Platforms</div>
+        <div style="font-size:11px;color:#7db8f0;line-height:2">
+          CloudWatch <span style="opacity:.35">·</span> Azure Monitor <span style="opacity:.35">·</span> GCP Ops <span style="opacity:.35">·</span> Datadog <span style="opacity:.35">·</span> Splunk <span style="opacity:.35">·</span> Dynatrace <span style="opacity:.35">·</span> New Relic <span style="opacity:.35">·</span> ELK <span style="opacity:.35">·</span> ServiceNow <span style="opacity:.35">·</span> Jira <span style="opacity:.35">·</span> PagerDuty <span style="opacity:.35">·</span> Confluence <span style="opacity:.35">·</span> SharePoint
+        </div>
+        <div style="margin-top:8px;font-size:10px;font-weight:700;color:#3b82f6;letter-spacing:.5px">20+ integrations</div>
+      </div>
+    </div></div>
+
+    <div class="col-arr">›</div>
+
+    <!-- COL 3: CORE INTELLIGENCE -->
+    <div class="col-core"><div class="sec">
+      <div class="sec-hdr"><div class="dot" style="background:#6366f1"></div><div class="lbl" style="color:#6366f1">Core Intelligence Engine</div></div>
+
+      <div class="core-card gc" style="padding:12px 16px">
+        <div class="ct" style="margin-bottom:4px">Discovery Engine</div>
+        <div class="cd">Maps your system and learns what's normal</div>
+        <div class="badge" style="background:rgba(99,102,241,.15);color:#818cf8;margin-top:8px">Topology &amp; Telemetry Intelligence</div>
+      </div>
+
+      <div class="flow-lbl">↓</div>
+
+      <div class="core-card sm" style="padding:12px 16px">
+        <div class="ct" style="margin-bottom:4px">Anomaly Engine</div>
+        <div class="cd">Detects issues the moment behavior deviates</div>
+        <div class="badge" style="background:rgba(251,146,60,.15);color:#fb923c;margin-top:8px">Anomaly Detection</div>
+      </div>
+
+      <div class="flow-lbl">↓</div>
+
+      <div class="core-card rca" style="padding:12px 16px">
+        <div class="ct" style="margin-bottom:4px">Causal AI Engine</div>
+<div class="cd">Finds root cause instantly with confidence</div>
+        <div class="badge" style="background:rgba(168,85,247,.15);color:#a855f7;margin-top:8px">Root Cause Intelligence</div>
+      </div>
+
+      <div class="flow-lbl">↓</div>
+
+      <div class="core-card nh" style="padding:12px 16px">
+        <div class="ct" style="margin-bottom:4px">Action Engine</div>
+        <div class="cd">Turns insights into alerts, tickets, and actions</div>
+        <div class="badge" style="background:rgba(34,197,94,.15);color:#22c55e;margin-top:8px">Alert &amp; Response</div>
+      </div>
+    </div></div>
+
+    <div class="col-arr">›</div>
+
+    <!-- COL 4: COMBINED BOX -->
+    <div class="col-out">
+      <div class="sec" style="height:100%;display:flex;flex-direction:column;gap:14px">
+
+        <!-- Graph Explorer -->
+        <div>
+          <div class="sec-hdr"><div class="dot" style="background:#6366f1"></div><div class="lbl" style="color:#6366f1">Topology Explorer</div></div>
+          <div class="out-cat" style="background:rgba(99,102,241,.05);border-color:rgba(99,102,241,.18)">
+<div style="display:flex;flex-direction:column;gap:4px">
+              <div class="out-sub" style="color:#818cf8;border-color:rgba(99,102,241,.15);background:rgba(99,102,241,.06)">Service Topology View</div>
+              <div class="out-sub" style="color:#818cf8;border-color:rgba(99,102,241,.15);background:rgba(99,102,241,.06)">Anomaly &amp; Blast Radius</div>
+              <div class="out-sub" style="color:#818cf8;border-color:rgba(99,102,241,.15);background:rgba(99,102,241,.06)">Dependency Navigation</div>
+              <div class="out-sub" style="color:#818cf8;border-color:rgba(99,102,241,.15);background:rgba(99,102,241,.06)">Service Filtering</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Actions & Notifications -->
+        <div>
+          <div class="sec-hdr"><div class="dot" style="background:#22c55e"></div><div class="lbl" style="color:#22c55e">Actions &amp; Notifications</div></div>
+          <div class="out-cat">
+            <div class="out-cat-title">Channels</div>
+            <div class="out-sub">Slack</div>
+            <div class="out-sub">Teams</div>
+            <div class="out-sub">Jira</div>
+            <div class="out-sub">ServiceNow</div>
+            <div class="out-sub other">Others</div>
+          </div>
+          <div class="out-cat" style="margin-top:8px">
+            <div class="out-cat-title">Delivers</div>
+            <div class="out-sub">Issue Summary</div>
+            <div class="out-sub">Root Cause + Confidence</div>
+            <div class="out-sub">Impact Assessment</div>
+            <div class="out-sub">Recommended Actions</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

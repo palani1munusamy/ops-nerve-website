@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Background circle gradient -->
+    <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1e1f35"/>
+      <stop offset="100%" stop-color="#0d0f15"/>
+    </radialGradient>
+
+    <!-- Core node gradient -->
+    <radialGradient id="core" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </radialGradient>
+
+    <!-- Outer ring gradient -->
+    <linearGradient id="ring" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="url(#bg)"/>
+
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="47" fill="none" stroke="url(#ring)" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- Satellite nodes + connection lines -->
+  <!-- Top -->
+  <line x1="50" y1="50" x2="50" y2="20" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="50" cy="20" r="3.5" fill="#818cf8" opacity="0.85" filter="url(#glow)"/>
+
+  <!-- Top-right -->
+  <line x1="50" y1="50" x2="73" y2="30" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="73" cy="30" r="3" fill="#a78bfa" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- Bottom-right -->
+  <line x1="50" y1="50" x2="76" y2="65" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="76" cy="65" r="2.5" fill="#818cf8" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Bottom -->
+  <line x1="50" y1="50" x2="50" y2="80" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="50" cy="80" r="3" fill="#a855f7" opacity="0.75" filter="url(#glow)"/>
+
+  <!-- Bottom-left -->
+  <line x1="50" y1="50" x2="24" y2="65" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="24" cy="65" r="2.5" fill="#818cf8" opacity="0.7" filter="url(#glow)"/>
+
+  <!-- Top-left -->
+  <line x1="50" y1="50" x2="27" y2="30" stroke="#6366f1" stroke-width="1" opacity="0.5"/>
+  <circle cx="27" cy="30" r="3" fill="#a78bfa" opacity="0.8" filter="url(#glow)"/>
+
+  <!-- Secondary connections between satellites (nerve mesh) -->
+  <line x1="50" y1="20" x2="73" y2="30" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+  <line x1="73" y1="30" x2="76" y2="65" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+  <line x1="76" y1="65" x2="50" y2="80" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+  <line x1="50" y1="80" x2="24" y2="65" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+  <line x1="24" y1="65" x2="27" y2="30" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+  <line x1="27" y1="30" x2="50" y2="20" stroke="#818cf8" stroke-width="0.6" opacity="0.25"/>
+
+  <!-- Pulse ring around core -->
+  <circle cx="50" cy="50" r="14" fill="none" stroke="#6366f1" stroke-width="0.8" opacity="0.35"/>
+
+  <!-- Core node -->
+  <circle cx="50" cy="50" r="10" fill="url(#core)" filter="url(#softglow)"/>
+
+  <!-- Core inner highlight -->
+  <circle cx="47" cy="47" r="3.5" fill="white" opacity="0.15"/>
+</svg>
