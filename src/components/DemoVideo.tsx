@@ -1,6 +1,6 @@
 export default function DemoVideo() {
   return (
-    <section id="demo" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-24 px-4">
+    <section id="demo" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-24 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-5xl font-bold font-poppins mb-4">See OpsNerve in Action</h2>
         <p className="text-lg text-slate-400 mb-12">Watch how OpsNerve transforms incident response from hours to seconds.</p>
