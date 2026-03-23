@@ -175,8 +175,7 @@ export default function SolutionOverview() {
   return (
     <section className="bg-slate-800 text-white py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center font-poppins mb-12">Solution Overview</h2>
-        <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
+<div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
       </div>
     </section>
   );
