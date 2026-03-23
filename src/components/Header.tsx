@@ -17,9 +17,9 @@ export default function Header() {
           </div>
         </Link>
         <nav className="hidden md:flex space-x-8">
+          <Link href="/intro" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Intro</Link>
           <Link href="/features" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Features</Link>
           <Link href="/how-it-works" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">How It Works</Link>
-          <Link href="/demo" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Demo</Link>
           <Link href="/contact" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Contact</Link>
         </nav>
         <Link href="/contact" className="relative px-6 py-2 rounded-lg font-semibold overflow-hidden group">
