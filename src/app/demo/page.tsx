@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import DemoVideo from "@/components/DemoVideo";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function DemoPage() {
   return (
     <div className="min-h-screen bg-[#0d0f15]">
       <Header />
       <main>
-        <Hero />
+        <DemoVideo />
       </main>
       <Footer />
     </div>

@@ -1,13 +1,15 @@
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import SolutionOverview from "@/components/SolutionOverview";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function FeaturesPage() {
   return (
     <div className="min-h-screen bg-[#0d0f15]">
       <Header />
       <main>
-        <Hero />
+        <Features />
+        <SolutionOverview />
       </main>
       <Footer />
     </div>
