@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HowItWorks from "@/components/HowItWorks";
+import SolutionOverview from "@/components/SolutionOverview";
 import Footer from "@/components/Footer";
 
 export default function HowItWorksPage() {
@@ -7,7 +7,7 @@ export default function HowItWorksPage() {
     <div className="min-h-screen bg-[#0d0f15]">
       <Header />
       <main>
-        <HowItWorks />
+        <SolutionOverview />
       </main>
       <Footer />
     </div>

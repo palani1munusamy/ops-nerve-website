@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Features from "@/components/Features";
-import SolutionOverview from "@/components/SolutionOverview";
 import Footer from "@/components/Footer";
 
 export default function FeaturesPage() {
@@ -9,7 +8,6 @@ export default function FeaturesPage() {
       <Header />
       <main>
         <Features />
-        <SolutionOverview />
       </main>
       <Footer />
     </div>
