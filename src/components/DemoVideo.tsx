@@ -13,7 +13,7 @@ export default function DemoVideo() {
               className="w-full h-auto bg-black"
               poster="/OpsNerve-icon.svg"
             >
-              <source src="/demo.mp4" type="video/mp4" />
+              <source src="/OpsNerve_Demo_v2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
