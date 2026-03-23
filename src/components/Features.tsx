@@ -1,30 +1,55 @@
-import { Map, Brain, AlertTriangle, Search, Zap } from "lucide-react";
+import { Network, BarChart2, Zap, Search, Radio, Ticket, Bot, Bell, Map, Plug } from "lucide-react";
 
 const features = [
   {
-    icon: Map,
-    title: "System Mapping",
-    description: "Automatically map your entire system architecture and dependencies for comprehensive monitoring."
+    icon: Network,
+    title: "Automatic Service Discovery",
+    description: "Connects to your existing observability stack and automatically maps every service, endpoint, and dependency — no manual configuration needed."
   },
   {
-    icon: Brain,
-    title: "Baseline Learning",
-    description: "AI learns normal system behavior patterns to establish accurate baselines for anomaly detection."
-  },
-  {
-    icon: AlertTriangle,
-    title: "Anomaly Detection",
-    description: "Real-time detection of deviations from normal patterns with high accuracy and low false positives."
-  },
-  {
-    icon: Search,
-    title: "Root Cause Analysis",
-    description: "Intelligent analysis to pinpoint the exact root cause of incidents within seconds."
+    icon: BarChart2,
+    title: "Behavioural Baseline Intelligence",
+    description: "Learns what normal looks like across every endpoint using 28 days of historical data — so it knows exactly when something is wrong."
   },
   {
     icon: Zap,
-    title: "Action Engine",
-    description: "Automated remediation actions to resolve issues before they impact users."
+    title: "Real-Time Anomaly Detection",
+    description: "Detects error rate spikes, latency surges, and traffic drops the moment they happen — using statistical and ML-based detectors running continuously."
+  },
+  {
+    icon: Search,
+    title: "AI Root Cause Analysis",
+    description: "Correlates signals across the service graph and identifies the most probable root cause — with a confidence score, not just a guess."
+  },
+  {
+    icon: Radio,
+    title: "Blast Radius Mapping",
+    description: "Instantly shows which services are impacted downstream so your team knows exactly what is affected and what to prioritise."
+  },
+  {
+    icon: Ticket,
+    title: "Automated Incident Ticketing",
+    description: "Raises incident tickets in Jira and ServiceNow automatically — pre-filled with signals, impact assessment, root cause, and recommended actions."
+  },
+  {
+    icon: Bot,
+    title: "Intelligent Ticket Triage",
+    description: "Reads open human-reported tickets, matches them to known services, and posts a full AI triage analysis — directly inside the ticket — without anyone asking."
+  },
+  {
+    icon: Bell,
+    title: "Multi-Channel Alerting",
+    description: "Delivers structured incident alerts to Slack and Teams — with signals, impact, root cause, and the one action your team needs to take right now."
+  },
+  {
+    icon: Map,
+    title: "Topology Explorer",
+    description: "An interactive, real-time service graph that highlights root cause nodes, blast radius, and dependency chains — so you can see the full picture at a glance."
+  },
+  {
+    icon: Plug,
+    title: "Tool-Agnostic by Design",
+    description: "Works with CloudWatch, Datadog, Splunk, ELK, Dynatrace, New Relic, and 20+ more — no rip-and-replace required."
   }
 ];
 
@@ -33,7 +58,12 @@ const colors = [
   { bg: "rgba(251,146,60,0.08)", border: "rgba(251,146,60,0.25)", icon: "#fb923c", title: "#fed7aa", grad: "from-orange-600/20 to-orange-600/5" },
   { bg: "rgba(6,182,212,0.08)", border: "rgba(6,182,212,0.25)", icon: "#06b6d4", title: "#cffafe", grad: "from-cyan-600/20 to-cyan-600/5" },
   { bg: "rgba(168,85,247,0.08)", border: "rgba(168,85,247,0.25)", icon: "#a855f7", title: "#e9d5ff", grad: "from-purple-600/20 to-purple-600/5" },
-  { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.25)", icon: "#22c55e", title: "#dcfce7", grad: "from-green-600/20 to-green-600/5" }
+  { bg: "rgba(34,197,94,0.08)", border: "rgba(34,197,94,0.25)", icon: "#22c55e", title: "#dcfce7", grad: "from-green-600/20 to-green-600/5" },
+  { bg: "rgba(239,68,68,0.08)", border: "rgba(239,68,68,0.25)", icon: "#ef4444", title: "#fecaca", grad: "from-red-600/20 to-red-600/5" },
+  { bg: "rgba(234,179,8,0.08)", border: "rgba(234,179,8,0.25)", icon: "#eab308", title: "#fef08a", grad: "from-yellow-600/20 to-yellow-600/5" },
+  { bg: "rgba(20,184,166,0.08)", border: "rgba(20,184,166,0.25)", icon: "#14b8a6", title: "#99f6e4", grad: "from-teal-600/20 to-teal-600/5" },
+  { bg: "rgba(244,114,182,0.08)", border: "rgba(244,114,182,0.25)", icon: "#f472b6", title: "#fbcfe8", grad: "from-pink-600/20 to-pink-600/5" },
+  { bg: "rgba(99,102,241,0.08)", border: "rgba(99,102,241,0.25)", icon: "#818cf8", title: "#e0e7ff", grad: "from-indigo-600/20 to-indigo-600/5" },
 ];
 
 export default function Features() {
