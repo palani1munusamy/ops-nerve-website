@@ -1,4 +1,4 @@
-import { Network, BarChart2, Zap, Search, Radio, Ticket, Bot, Bell, Map, Plug } from "lucide-react";
+import { Network, BarChart2, Zap, Search, Radio, Ticket, Bot, Bell, Map } from "lucide-react";
 
 const features = [
   {
@@ -45,11 +45,6 @@ const features = [
     icon: Map,
     title: "Topology Explorer",
     description: "An interactive, real-time service graph that highlights root cause nodes, blast radius, and dependency chains — so you can see the full picture at a glance."
-  },
-  {
-    icon: Plug,
-    title: "Tool-Agnostic by Design",
-    description: "Works with CloudWatch, Datadog, Splunk, ELK, Dynatrace, New Relic, and 20+ more — no rip-and-replace required."
   }
 ];
 
@@ -63,12 +58,11 @@ const colors = [
   { bg: "rgba(234,179,8,0.08)", border: "rgba(234,179,8,0.25)", icon: "#eab308", title: "#fef08a", grad: "from-yellow-600/20 to-yellow-600/5" },
   { bg: "rgba(20,184,166,0.08)", border: "rgba(20,184,166,0.25)", icon: "#14b8a6", title: "#99f6e4", grad: "from-teal-600/20 to-teal-600/5" },
   { bg: "rgba(244,114,182,0.08)", border: "rgba(244,114,182,0.25)", icon: "#f472b6", title: "#fbcfe8", grad: "from-pink-600/20 to-pink-600/5" },
-  { bg: "rgba(99,102,241,0.08)", border: "rgba(99,102,241,0.25)", icon: "#818cf8", title: "#e0e7ff", grad: "from-indigo-600/20 to-indigo-600/5" },
 ];
 
 export default function Features() {
   return (
-    <section id="features" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-24 px-4">
+    <section id="features" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-24 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold font-poppins mb-4">Core Capabilities</h2>
