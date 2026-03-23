@@ -62,12 +62,8 @@ const colors = [
 
 export default function Features() {
   return (
-    <section id="features" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-24 px-4 overflow-hidden">
+    <section id="features" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-6 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold font-poppins mb-4">Core Capabilities</h2>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">Everything you need to transform incident response</p>
-        </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             const color = colors[index % colors.length];
