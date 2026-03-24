@@ -7,7 +7,29 @@ export default function CTA() {
       </div>
       <div className="max-w-2xl mx-auto text-center relative z-10">
         <h2 className="text-5xl font-bold font-poppins mb-12">Ready to run a smarter, faster, AI-powered ops team?</h2>
-        <div className="flex flex-col items-center gap-4 justify-center">
+        <div className="flex flex-col items-center gap-6 justify-center">
+          <form
+            action="https://formsubmit.co/contact@opsnerve.ai"
+            method="POST"
+            className="flex flex-col sm:flex-row gap-4 max-w-md w-full"
+          >
+            <input type="hidden" name="_subject" value="OpsNerve Demo Request" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Work email"
+              className="flex-1 px-5 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent backdrop-blur-sm transition-all"
+              required
+            />
+            <button
+              type="submit"
+              className="relative px-8 py-4 rounded-lg font-semibold overflow-hidden group"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:shadow-2xl group-hover:shadow-indigo-500/50 transition-all"></div>
+              <span className="relative text-white">Want to see it work?</span>
+            </button>
+          </form>
           <a
             href="https://www.linkedin.com/in/palani-munusamy/"
             target="_blank"
