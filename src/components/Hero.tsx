@@ -15,12 +15,6 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
           AI-powered anomaly detection and root cause intelligence for engineering and platform teams.<br />Detect faster. Diagnose instantly. Act with confidence.
         </p>
-        <div className="flex justify-center">
-          <a href="/contact" className="group relative px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all">
-            <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 group-hover:shadow-2xl group-hover:shadow-indigo-500/50 transition-all"></div>
-            <span className="relative text-white flex items-center justify-center">See It in Action</span>
-          </a>
-        </div>
       </div>
     </section>
   );
