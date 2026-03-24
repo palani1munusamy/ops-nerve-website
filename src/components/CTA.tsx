@@ -11,7 +11,7 @@ export default function CTA() {
           <form
             action="https://formsubmit.co/contact@opsnerve.ai"
             method="POST"
-            className="flex flex-col sm:flex-row gap-4 max-w-md w-full"
+            className="flex flex-col gap-4 max-w-md w-full"
           >
             <input type="hidden" name="_subject" value="OpsNerve Demo Request" />
             <input type="hidden" name="_captcha" value="false" />
