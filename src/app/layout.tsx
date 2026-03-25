@@ -16,6 +16,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "OpsNerve.ai - Real-time Anomaly Detection for DevOps",
   description: "AI-powered anomaly detection and root cause intelligence platform for DevOps/SRE teams. From alert to root cause in seconds.",
+  icons: {
+    icon: "/OpsNerve-icon.svg",
+    shortcut: "/OpsNerve-icon.svg",
+    apple: "/OpsNerve-icon.svg",
+  },
 };
 
 export default function RootLayout({
