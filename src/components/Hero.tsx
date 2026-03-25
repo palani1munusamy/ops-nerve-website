@@ -5,7 +5,7 @@ export default function Hero() {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
       </div>
-      <div className="max-w-5xl mx-auto text-center relative z-10">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         <div className="mb-8 inline-block px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/30 backdrop-blur-sm">
           <span className="text-sm font-semibold text-indigo-300">AI-Powered Operations Intelligence</span>
         </div>
@@ -13,7 +13,7 @@ export default function Hero() {
           From Alert to Root Cause in Seconds
         </h1>
         <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-          AI-powered anomaly detection and root cause intelligence for engineering and platform teams.<br />Detect faster. Diagnose instantly. Act with confidence.
+          Detect faster. Diagnose instantly. Act with confidence.
         </p>
       </div>
     </section>

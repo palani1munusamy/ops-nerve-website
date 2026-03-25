@@ -1,6 +1,6 @@
 export default function SolutionOverview() {
   const diagramHTML = `
-    <div class="container" style="width:725px;background:linear-gradient(145deg,#12141c,#0d0f15,#10131e);border:1px solid rgba(99,102,241,.12);border-radius:16px;padding:28px 32px 24px;box-shadow:0 0 60px rgba(99,102,241,.05);margin:0 auto;">
+    <div class="container" style="width:725px;min-width:725px;background:linear-gradient(145deg,#12141c,#0d0f15,#10131e);border:1px solid rgba(99,102,241,.12);border-radius:16px;padding:28px 32px 24px;box-shadow:0 0 60px rgba(99,102,241,.05);margin:0 auto;">
       <div class="hdr" style="text-align:center;margin-bottom:18px">
         <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:6px">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="52" height="52">
@@ -174,8 +174,8 @@ export default function SolutionOverview() {
 
   return (
     <section id="how-it-works" className="bg-slate-800 text-white py-4 px-4">
-      <div className="max-w-6xl mx-auto">
-<div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
+      <div className="max-w-6xl mx-auto overflow-x-auto">
+        <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
       </div>
     </section>
   );

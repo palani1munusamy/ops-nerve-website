@@ -5,7 +5,7 @@ export default function CTA() {
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl"></div>
       </div>
-      <div className="max-w-2xl mx-auto text-center relative z-10">
+      <div className="max-w-6xl mx-auto text-center relative z-10">
         <h2 className="text-5xl font-bold font-poppins mb-12">Ready to run a smarter, faster, AI-powered ops team?</h2>
         <div className="flex flex-col items-center gap-6 justify-center">
           <form
