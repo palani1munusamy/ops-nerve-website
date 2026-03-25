@@ -1,6 +1,6 @@
 export default function DemoVideo() {
   return (
-    <section id="demo" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-16 px-4 overflow-hidden scroll-mt-20">
+    <section id="demo" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-16 px-4 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4">Meet OpsNerve</h2>
 
