@@ -1,6 +1,6 @@
 export default function SolutionOverview() {
   return (
-    <section id="how-it-works" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-16 px-4">
+    <section id="how-it-works" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-16 px-4 scroll-mt-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4 text-white">How It Works</h2>
@@ -86,45 +86,46 @@ export default function SolutionOverview() {
             {/* Arrow mobile */}
             <div className="md:hidden text-center text-slate-600 text-2xl">↓</div>
 
-            {/* Column 3: Outputs — side by side grid */}
-            <div className="flex-1">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Column 3: Outputs */}
+            <div className="w-full md:w-52 md:flex-shrink-0">
 
-                {/* Topology Explorer */}
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                    <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase">Topology Explorer</span>
-                  </div>
-                  <div className="bg-indigo-500/5 border border-indigo-500/15 rounded-xl p-4">
-                    {["Service Topology View", "Anomaly & Blast Radius", "Dependency Navigation", "Service Filtering"].map(item => (
-                      <div key={item} className="bg-indigo-500/6 border border-indigo-500/12 rounded px-3 py-1.5 mb-1.5 text-xs text-indigo-300">{item}</div>
-                    ))}
-                  </div>
+              {/* Topology Explorer */}
+              <div className="mb-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                  <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase">Topology Explorer</span>
                 </div>
-
-                {/* Actions & Notifications */}
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                    <span className="text-xs font-bold tracking-wider text-green-400 uppercase">Actions &amp; Notifications</span>
-                  </div>
-                  <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4 mb-2">
-                    <div className="text-xs font-bold text-green-300 mb-2">Channels</div>
-                    {["Slack", "Teams", "Jira", "ServiceNow"].map(ch => (
-                      <div key={ch} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{ch}</div>
-                    ))}
-                    <div className="border border-dashed border-green-500/10 rounded px-3 py-1.5 text-xs text-green-300/30">Others</div>
-                  </div>
-                  <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4">
-                    <div className="text-xs font-bold text-green-300 mb-2">Delivers</div>
-                    {["Issue Summary", "Root Cause + Confidence", "Impact Assessment", "Recommended Actions"].map(d => (
-                      <div key={d} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{d}</div>
-                    ))}
-                  </div>
+                <div className="bg-indigo-500/5 border border-indigo-500/15 rounded-xl p-4">
+                  {["Service Topology View", "Anomaly & Blast Radius", "Dependency Navigation", "Service Filtering"].map(item => (
+                    <div key={item} className="bg-indigo-500/6 border border-indigo-500/12 rounded px-3 py-1.5 mb-1.5 text-xs text-indigo-300">{item}</div>
+                  ))}
                 </div>
-
               </div>
+
+              {/* Actions & Notifications */}
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span className="text-xs font-bold tracking-wider text-green-400 uppercase">Actions &amp; Notifications</span>
+                </div>
+                <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4 mb-3">
+                  <div className="text-sm font-bold text-green-300 mb-3">Channels</div>
+                  <div className="text-xs text-green-300/70 leading-6">
+                    {["Slack", "Teams", "Jira", "ServiceNow", "Others"].map(ch => (
+                      <div key={ch}>{ch}</div>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4">
+                  <div className="text-sm font-bold text-green-300 mb-3">Delivers</div>
+                  <div className="text-xs text-green-300/70 leading-6">
+                    {["Issue Summary", "Root Cause + Confidence", "Impact Assessment", "Recommended Actions"].map(d => (
+                      <div key={d}>{d}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
 
           </div>
