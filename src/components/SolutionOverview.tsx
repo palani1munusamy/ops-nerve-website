@@ -86,43 +86,45 @@ export default function SolutionOverview() {
             {/* Arrow mobile */}
             <div className="md:hidden text-center text-slate-600 text-2xl">↓</div>
 
-            {/* Column 3: Outputs */}
-            <div className="w-full md:w-52 md:flex-shrink-0">
+            {/* Column 3: Outputs — side by side grid */}
+            <div className="flex-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-              {/* Topology Explorer */}
-              <div className="mb-5">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
-                  <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase">Topology Explorer</span>
+                {/* Topology Explorer */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-indigo-500"></div>
+                    <span className="text-xs font-bold tracking-wider text-indigo-400 uppercase">Topology Explorer</span>
+                  </div>
+                  <div className="bg-indigo-500/5 border border-indigo-500/15 rounded-xl p-4">
+                    {["Service Topology View", "Anomaly & Blast Radius", "Dependency Navigation", "Service Filtering"].map(item => (
+                      <div key={item} className="bg-indigo-500/6 border border-indigo-500/12 rounded px-3 py-1.5 mb-1.5 text-xs text-indigo-300">{item}</div>
+                    ))}
+                  </div>
                 </div>
-                <div className="bg-indigo-500/5 border border-indigo-500/15 rounded-xl p-4">
-                  {["Service Topology View", "Anomaly & Blast Radius", "Dependency Navigation", "Service Filtering"].map(item => (
-                    <div key={item} className="bg-indigo-500/6 border border-indigo-500/12 rounded px-3 py-1.5 mb-1.5 text-xs text-indigo-300">{item}</div>
-                  ))}
+
+                {/* Actions & Notifications */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                    <span className="text-xs font-bold tracking-wider text-green-400 uppercase">Actions &amp; Notifications</span>
+                  </div>
+                  <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4 mb-2">
+                    <div className="text-xs font-bold text-green-300 mb-2">Channels</div>
+                    {["Slack", "Teams", "Jira", "ServiceNow"].map(ch => (
+                      <div key={ch} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{ch}</div>
+                    ))}
+                    <div className="border border-dashed border-green-500/10 rounded px-3 py-1.5 text-xs text-green-300/30">Others</div>
+                  </div>
+                  <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4">
+                    <div className="text-xs font-bold text-green-300 mb-2">Delivers</div>
+                    {["Issue Summary", "Root Cause + Confidence", "Impact Assessment", "Recommended Actions"].map(d => (
+                      <div key={d} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{d}</div>
+                    ))}
+                  </div>
                 </div>
+
               </div>
-
-              {/* Actions & Notifications */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  <span className="text-xs font-bold tracking-wider text-green-400 uppercase">Actions &amp; Notifications</span>
-                </div>
-                <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4 mb-3">
-                  <div className="text-xs font-bold text-green-300 mb-2">Channels</div>
-                  {["Slack", "Teams", "Jira", "ServiceNow"].map(ch => (
-                    <div key={ch} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{ch}</div>
-                  ))}
-                  <div className="border border-dashed border-green-500/10 rounded px-3 py-1.5 text-xs text-green-300/30">Others</div>
-                </div>
-                <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4">
-                  <div className="text-xs font-bold text-green-300 mb-2">Delivers</div>
-                  {["Issue Summary", "Root Cause + Confidence", "Impact Assessment", "Recommended Actions"].map(d => (
-                    <div key={d} className="bg-green-500/6 border border-green-500/10 rounded px-3 py-1.5 mb-1.5 text-xs text-green-300/80">{d}</div>
-                  ))}
-                </div>
-              </div>
-
             </div>
 
           </div>
