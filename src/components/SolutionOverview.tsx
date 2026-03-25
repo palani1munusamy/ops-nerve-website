@@ -110,7 +110,7 @@ export default function SolutionOverview() {
                 </div>
                 <div className="bg-green-500/5 border border-green-500/12 rounded-xl p-4 mb-3">
                   <div className="text-sm font-bold text-green-300 mb-3">Channels</div>
-                  <div className="text-xs text-green-300/70 leading-6">
+                  <div className="text-xs font-normal text-green-300/70 leading-6">
                     {["Slack", "Teams", "Jira", "ServiceNow", "Others"].map(ch => (
                       <div key={ch}>{ch}</div>
                     ))}

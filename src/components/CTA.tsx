@@ -1,6 +1,6 @@
 export default function CTA() {
   return (
-    <section id="contact" className="relative bg-gradient-to-b from-[#0d0f15] via-[#12141c] to-[#0d0f15] text-white pt-40 pb-32 px-4 border-t border-indigo-500/10 overflow-hidden scroll-mt-20">
+    <section id="contact" className="relative bg-gradient-to-b from-[#0d0f15] via-[#12141c] to-[#0d0f15] text-white pt-52 pb-40 px-4 border-t border-indigo-500/10 overflow-hidden scroll-mt-20">
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
