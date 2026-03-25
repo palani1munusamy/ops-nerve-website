@@ -1,5 +1,9 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import DemoVideo from "@/components/DemoVideo";
+import Features from "@/components/Features";
+import SolutionOverview from "@/components/SolutionOverview";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -8,6 +12,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <DemoVideo />
+        <Features />
+        <SolutionOverview />
+        <CTA />
       </main>
       <Footer />
     </div>

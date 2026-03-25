@@ -173,7 +173,7 @@ export default function SolutionOverview() {
   `;
 
   return (
-    <section className="bg-slate-800 text-white py-4 px-4">
+    <section id="how-it-works" className="bg-slate-800 text-white py-4 px-4">
       <div className="max-w-6xl mx-auto">
 <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
       </div>

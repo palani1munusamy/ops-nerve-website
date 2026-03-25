@@ -17,12 +17,12 @@ export default function Header() {
           </div>
         </Link>
         <nav className="hidden md:flex space-x-8">
-          <Link href="/intro" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Intro</Link>
-          <Link href="/features" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Features</Link>
-          <Link href="/how-it-works" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">How It Works</Link>
-          <Link href="/contact" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Contact</Link>
+          <Link href="#demo" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Intro</Link>
+          <Link href="#features" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Features</Link>
+          <Link href="#how-it-works" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">How It Works</Link>
+          <Link href="#contact" className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">Contact</Link>
         </nav>
-        <Link href="/contact" className="relative px-6 py-2 rounded-lg font-semibold overflow-hidden group">
+        <Link href="#contact" className="relative px-6 py-2 rounded-lg font-semibold overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:shadow-lg group-hover:shadow-indigo-500/50 transition-all"></div>
           <span className="relative text-white text-sm">Get Started</span>
         </Link>
