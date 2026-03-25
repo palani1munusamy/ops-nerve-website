@@ -8,7 +8,7 @@ export default function SolutionOverview() {
         </div>
 
         <div className="bg-gradient-to-br from-[#12141c] via-[#0d0f15] to-[#10131e] border border-indigo-500/10 rounded-2xl p-6 md:p-8">
-          <div className="flex flex-col md:flex-row gap-6 items-stretch">
+          <div className="flex flex-col md:flex-row gap-6 items-start">
 
             {/* Column 1: Data Sources */}
             <div className="w-full md:w-44 md:flex-shrink-0">
@@ -32,7 +32,7 @@ export default function SolutionOverview() {
             </div>
 
             {/* Arrow desktop */}
-            <div className="hidden md:flex items-center justify-center text-slate-600 text-2xl flex-shrink-0">›</div>
+            <div className="hidden md:flex self-center items-center justify-center text-slate-600 text-2xl flex-shrink-0 pt-8">›</div>
             {/* Arrow mobile */}
             <div className="md:hidden text-center text-slate-600 text-2xl">↓</div>
 
@@ -82,7 +82,7 @@ export default function SolutionOverview() {
             </div>
 
             {/* Arrow desktop */}
-            <div className="hidden md:flex items-center justify-center text-slate-600 text-2xl flex-shrink-0">›</div>
+            <div className="hidden md:flex self-center items-center justify-center text-slate-600 text-2xl flex-shrink-0 pt-8">›</div>
             {/* Arrow mobile */}
             <div className="md:hidden text-center text-slate-600 text-2xl">↓</div>
 
