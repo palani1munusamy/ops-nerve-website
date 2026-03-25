@@ -11,8 +11,24 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+const HEADER_HEIGHT = 80;
+
+function scrollToSection(href: string) {
+  const target = document.querySelector(href);
+  if (target) {
+    const top = target.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
+    window.scrollTo({ top, behavior: "smooth" });
+  }
+}
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    scrollToSection(href);
+    setMobileOpen(false);
+  };
 
   return (
     <header className="bg-gradient-to-b from-[#0d0f15]/95 via-[#12141c]/95 to-transparent text-white py-5 px-4 sticky top-0 z-50 border-b border-indigo-500/10 backdrop-blur-md">
@@ -26,14 +42,23 @@ export default function Header() {
 
         <nav className="hidden md:flex space-x-8">
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} className="text-slate-300 hover:text-indigo-300 transition-colors font-medium">
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={e => handleClick(e, link.href)}
+              className="text-slate-300 hover:text-indigo-300 transition-colors font-medium"
+            >
               {link.label}
             </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="#contact" className="hidden md:block relative px-6 py-2 rounded-lg font-semibold overflow-hidden group">
+          <a
+            href="#contact"
+            onClick={e => handleClick(e, "#contact")}
+            className="hidden md:block relative px-6 py-2 rounded-lg font-semibold overflow-hidden group"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:shadow-lg group-hover:shadow-indigo-500/50 transition-all"></div>
             <span className="relative text-white text-sm">Get Started</span>
           </a>
@@ -54,16 +79,16 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={e => handleClick(e, link.href)}
                 className="text-slate-300 hover:text-indigo-300 transition-colors font-medium py-1"
-                onClick={() => setMobileOpen(false)}
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
+              onClick={e => handleClick(e, "#contact")}
               className="relative px-6 py-3 rounded-lg font-semibold overflow-hidden group text-center mt-2"
-              onClick={() => setMobileOpen(false)}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600"></div>
               <span className="relative text-white text-sm">Get Started</span>
