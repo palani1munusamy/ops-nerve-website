@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -23,8 +24,11 @@ function scrollToSection(href: string) {
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!isHome) return; // let browser navigate to /#anchor normally
     e.preventDefault();
     scrollToSection(href);
     setMobileOpen(false);
@@ -44,7 +48,7 @@ export default function Header() {
           {navLinks.map(link => (
             <a
               key={link.href}
-              href={link.href}
+              href={isHome ? link.href : `/${link.href}`}
               onClick={e => handleClick(e, link.href)}
               className="text-slate-300 hover:text-indigo-300 transition-colors font-medium"
             >
@@ -55,7 +59,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href={isHome ? "#contact" : "/#contact"}
             onClick={e => handleClick(e, "#contact")}
             className="hidden md:block relative px-6 py-2 rounded-lg font-semibold overflow-hidden group"
           >
@@ -78,7 +82,7 @@ export default function Header() {
             {navLinks.map(link => (
               <a
                 key={link.href}
-                href={link.href}
+                href={isHome ? link.href : `/${link.href}`}
                 onClick={e => handleClick(e, link.href)}
                 className="text-slate-300 hover:text-indigo-300 transition-colors font-medium py-1"
               >
@@ -86,7 +90,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contact"
+              href={isHome ? "#contact" : "/#contact"}
               onClick={e => handleClick(e, "#contact")}
               className="relative px-6 py-3 rounded-lg font-semibold overflow-hidden group text-center mt-2"
             >
