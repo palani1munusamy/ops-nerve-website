@@ -173,9 +173,16 @@ export default function SolutionOverview() {
   `;
 
   return (
-    <section id="how-it-works" className="bg-slate-800 text-white py-4 px-4">
-      <div className="max-w-6xl mx-auto overflow-x-auto">
-        <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
+    <section id="how-it-works" className="bg-gradient-to-b from-[#0d0f15] via-[#10131e] to-[#0d0f15] text-white py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4 text-white">How It Works</h2>
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto">From raw signals to resolved incidents — fully automated.</p>
+        </div>
+        <div className="overflow-x-auto">
+          <div dangerouslySetInnerHTML={{ __html: diagramHTML }} />
+        </div>
+        <p className="md:hidden text-xs text-slate-500 text-center mt-3">← Scroll to explore →</p>
       </div>
     </section>
   );
