@@ -11,7 +11,7 @@ export default function DemoVideo() {
             <video
               controls
               className="w-full h-auto bg-black"
-              poster="/OpsNerve-icon.svg"
+              poster="/opsnerve_thumbnail.png"
             >
               <source src="/OpsNerve_Demo_v2.mp4" type="video/mp4" />
               Your browser does not support the video tag.

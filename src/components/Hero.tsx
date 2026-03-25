@@ -35,7 +35,7 @@ export default function Hero() {
               className="relative w-full px-8 py-4 rounded-lg font-semibold overflow-hidden group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:shadow-2xl group-hover:shadow-indigo-500/50 transition-all"></div>
-              <span className="relative text-white">Want to see it work?</span>
+              <span className="relative text-white">Talk to an Expert</span>
             </button>
           </form>
         </div>
